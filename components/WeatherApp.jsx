@@ -726,7 +726,7 @@ function WeatherApp() {
           )}
 
           {/* Details for Hourly Temp */}
-          {displayMode === "hourly" && currentWeather && (
+          {currentWeather && displayMode === "hourly" && (
             <div className="hourly-forecast-carousel">
               <div
                 className="hourly-forecast-container"
