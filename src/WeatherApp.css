@@ -1,0 +1,649 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*, *::before, *::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+:root{
+  --background-color: #f6f6f8;
+}
+
+body{
+  /* font-family: Arial, Helvetica, sans-serif; */
+  width: 100vw;
+  min-height: 100vh;
+}
+
+img{
+  width: 5rem;
+}
+
+/* Head search container - Including search field, geoButton, and tempButtons */
+.header-container{
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.head-search-container{
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.head-search-container .input-container{
+  width: 20rem;
+}
+
+.head-search-container .head-input-field{
+  border: none;
+  outline: none;
+  background: #fff;
+}
+
+.head-search-container .temp-button.geo-btn{
+  border: none;
+  background: #fff;
+  cursor: pointer;
+}
+
+.head-search-container .input-container .search-field{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.25rem;
+  /* border: 1px solid black; */
+  font-weight: 800;
+  border-radius: 5px;
+}
+
+.head-search-container .input-container .search-field input,
+.head-search-container .input-container .search-field button{
+  font-size: 1.25rem;
+}
+
+
+/* Suggestion box of Input field */
+.input-container .search-box{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  overflow-y: scroll;
+  max-height: 14rem;
+  border: none;
+}
+
+.input-container .search-box-null{
+  margin: 0.125rem;
+  width: 100%;
+  /* border: 1px solid black; */
+  padding: 0.25rem;
+  border-radius: 5px;
+}
+
+.input-container .search-box ul{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.25rem;
+  /* border: 1px solid black; */
+  border-radius: 5px;
+}
+
+.input-container .search-box ul li{
+  display: flex;
+  margin: 0 0.125rem;
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+  /* border-bottom: 1px solid rgba(255, 255, 255, 0.2); */
+  /* border-bottom: 1px solid #333; */
+}
+
+.input-container .search-box ul li a{
+  color: #111;
+  text-decoration: none;
+  padding: 0.125rem;
+}
+
+/* Temp buttons */
+.head-search-container .head-button-container{
+  display: flex;
+  align-items: baseline;
+}
+
+.head-search-container .head-button-container .temp-button{
+  color: black;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  /* border: 1px solid darkgreen; */
+  border-radius: 5px;
+  font-size: 1.25rem;
+  padding: 0.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 0.125rem;
+  margin-left: 0.25rem;
+  background: var(--background-color);
+}
+
+.head-search-container .head-button-container .temp-button.active{
+  color: #1fb1fc;
+}
+
+/* ------ END OF HEAD SEARCH CONTAINER ------- */
+
+/* Head Main Container - Includes all data about today's weather */
+.head-main-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.head-main-container .main-location{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  margin: 1rem auto;
+}
+
+.main-img-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0.5rem;
+}
+
+.main-img-container img{
+  width: 15rem;
+}
+
+.main-img-container h1{
+  font-size: 2.85rem;
+  font-weight: 530;
+  margin: 0.75rem;
+}
+
+.main-img-container h4{
+  font-size: 1.25rem;
+  font-weight: 450;
+}
+
+.main-details-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  height: 50%;
+}
+
+.main-details-container .main-details-box{
+  display: flex;
+  flex-basis: 50%;
+  gap: 3px;
+}
+
+.main-details-box .main-details-icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f1f1f1;
+  border: none;
+  border-radius: 50%;
+  width: 5rem;
+  padding: 1rem;
+  margin: 1rem;
+  height: 5rem;
+  overflow: hidden;
+}
+
+.main-details-box .main-details{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-size: 1.12rem;
+}
+
+.main-details-box .main-details :first-child{
+  color: grey;
+}
+
+/* ------- END OF HEADER SECTION -------- */
+
+/* Forecast section */
+.forecast-container {
+  display: flex;
+  flex-direction: column;
+  /* border: 2px solid forestgreen; */
+  background: var(--background-color);
+  max-width: 100vw;
+}
+
+/* Forecast Section Buttons */
+.forecast-toggle-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+}
+
+.forecast-toggle-buttons button {
+  background: transparent;
+  color: gray;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-right: 1rem;
+  cursor: pointer;
+  position: relative;
+  font-size: 1.5rem;
+}
+
+.forecast-toggle-buttons button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: grey;
+  transition: all 0.2s ease-in;
+}
+
+.forecast-toggle-buttons button:hover::after {
+  content: "";
+  height: 2px;
+  width: 100%;
+  background: #000;
+}
+
+.forecast-toggle-buttons button:focus,
+.forecast-toggle-buttons button.active {
+  color: #000;
+  border-bottom: 2px solid black;
+}
+
+.forecast-toggle-buttons button:focus::after {
+  background: #000;
+}
+
+.forecast-toggle-buttons button:first-child:focus {
+  color: #000;
+  border-bottom: 2px solid black;
+}
+
+.forecast-toggle-buttons button:first-child:focus::after {
+  background: #000;
+}
+
+/* ------ END OF FORECAST BUTTONS CONTAINER ------  */
+
+/* Daily forecast container */
+
+/* Arrow Buttons (Carousel) container */
+.daily-forecast-carousel, .hourly-forecast-carousel {
+  position: relative;
+  max-width: 100vw;
+  overflow: hidden;
+}
+
+.carousel-navigation {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.carousel-button {
+  border: none;
+  /* background-color: rgba(0,0,0,0.5); */
+  /* padding: 0.5rem; */
+  margin: 0 0.25rem;
+  color: #333;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* ------ END OF ARROW BUTTONS (CAROUSEL) CONTAINER */
+
+/* Daily forecast container */
+
+.daily-forecast-container {
+  display: flex;
+  align-items: center;
+  gap: 3.5rem;
+  margin: 0 4rem;
+  padding: 1rem 0;
+  transition: transform 0.5s ease;
+}
+
+.daily-forecast-card {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-around;
+  /* border: 1px solid firebrick; */
+  border-radius: 5px;
+  background: #fff;
+  min-width: 5rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.daily-forecast-card:hover{
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px);
+}
+
+.daily-forecast-card .daily-forecast-day,
+.daily-forecast-card .daily-forecast-max-temp{
+  font-weight: 535;
+}
+
+.daily-forecast-card img{
+  width: 7rem;
+}
+
+.daily-forecast-card .daily-forecast-max-temp{
+  font-size: 1.125rem;
+}
+
+
+.daily-forecast-card .daily-forecast-date,
+.daily-forecast-card .daily-forecast-min-temp{
+  color: #919091;
+  font-weight: 500;
+  font-size: 1.125rem;
+  margin-top: 0.5rem;
+}
+
+/* ----- END OF DAILY FORECAST CONTAINER ----- */
+
+/* Hourly forecast container */
+.hourly-forecast-container{
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin: 0 4rem;
+  padding: 1rem 0;
+  transition: transform 0.5s ease;
+}
+
+.hourly-forecast-card{
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-around;
+  /* border: 1px solid firebrick; */
+  border-radius: 5px;
+  background: #fff;
+  min-width: 8rem;
+  padding: 1rem;
+}
+
+.hourly-forecast-card img{
+  width: 7rem;
+}
+
+.hourly-forecast-card .hourly-forecast-time,
+.hourly-forecast-card .hourly-forecast-temp{
+  font-size: 1.25rem;
+  font-weight: 545;
+  margin: 1rem 0;
+}
+
+/* ------ END OF HOURLY FORECAST CONTAINER ------ */
+
+/* Details container */
+.details-container{
+  max-width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.details-card-container{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin: 1rem;
+}
+
+.details-header{
+  display: flex;
+  align-items: center;
+  margin: 1rem;
+  font-size: 1.125rem;
+  font-weight: 545;
+}
+
+.details-card{
+  border: transparent;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.details-card-header{
+  text-align: left;
+  font-weight: 540;
+  opacity: 0.7;
+  width: 100%;
+  font-size: 1.125rem;
+}
+
+.details-card img{
+  width: 6rem;
+}
+
+.details-card-content{
+  font-weight: 540;
+  font-size: 1.5rem;
+}
+
+/* ------ END OF DETAILS CONTAINER ------- */
+
+/* Loading CSS */
+/* .loading-mask{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  opacity: 0.6;
+  z-index: 10;
+}
+
+.loading-spinner{
+  position: absolute;
+  top: 50%;
+  right: calc(50% - 2rem);
+  width: 4rem;
+  height: 4rem;
+  border: 5px solid #fff;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} */
+
+.loader-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  opacity: 0.7;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nature-10 {
+  width: 200px;
+  height: 100px;
+  background:
+    radial-gradient(circle 50px at top right, #ffd738 60%,#0000 ),
+    #4dbefa;
+  position: relative;
+  overflow:hidden;
+}
+.nature-10:before,
+.nature-10:after{
+  content:"";
+  position:absolute;
+  top:50px;
+  left:-40px;
+  width:36px;
+  height:20px;
+  --c: radial-gradient(farthest-side,#fff 96%,#0000);
+  background: 
+    var(--c) 100% 100% /30% 60%, 
+    var(--c) 70% 0 /50% 100%, 
+    var(--c) 0 100% /36% 68%, 
+    var(--c) 27% 18% /26% 40%,
+    linear-gradient(#fff 0 0) bottom/67% 58%;
+  background-repeat: no-repeat;
+  animation:n10 2s linear infinite;
+}
+.nature-10:after {
+   top:15px;
+   --l:200%;
+}
+
+@keyframes n10{
+  100% {left:var(--l,105%)}
+}
+
+/* ------ END OF LOADER CONTAINER ------ */
+
+/* Media Queries */
+/* 900 px */
+@media screen and (max-width: 900px){
+  /* body{
+    background-color: green;
+  } */
+  /* body, .forecast-container, .details-container{
+    overflow-x: hidden;
+    max-width: 100vw;
+  } */
+
+  .main-details-container{
+    width: 50%;
+    height: auto;
+  }
+
+  .main-details-container .main-details-box{
+    flex-basis: 100%;
+    flex-wrap: wrap;
+  }
+
+  .details-card-container{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 750px) and (min-width: 550px) {
+  /* body, .forecast-container, .details-container{
+    overflow-x: hidden;
+    max-width: 100vw;
+  } */
+  
+
+  .head-search-container{
+    flex-direction: column;
+  }
+
+  .head-search-container .head-button-container{
+    justify-content: center;
+  }
+
+  .head-main-container .main-location{
+    width: 60%;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (max-width: 550px){
+  /* body{
+    background: firebrick;
+  } */
+
+  /* body, .forecast-container, .details-container{
+    overflow-x: hidden;
+    max-width: 100vw;
+  } */
+
+  .head-search-container{
+    display: block;
+  }
+  
+  .head-search-container .input-container .search-field{
+    justify-content: space-evenly;
+  }
+
+  .head-search-container .input-container{
+    margin: 1rem;
+    /* width: 50%; */
+  }
+
+  .head-search-container .head-button-container{
+    justify-content: center;
+  }
+
+  .head-main-container .main-location{
+    width: 80%;
+    justify-content: center;
+  }
+
+  .main-details-container{
+    width: 100%;
+  }
+
+  .daily-forecast-container{
+    gap: 0.75rem;
+  }
+
+  .daily-forecast-card{
+    min-width: 3rem;
+  }
+
+  .details-card-container{
+    grid-template-columns: 1fr;
+  }
+
+}
