@@ -133,7 +133,9 @@ function WeatherApp() {
 
         setHourlyIndex(desiredIndices);
 
-        const time = [], weatherCode = [], tempHourly = [];
+        const time = [],
+          weatherCode = [],
+          tempHourly = [];
         desiredIndices.forEach((index) => {
           time.push(forecastData.hourly.time[index]);
           weatherCode.push(forecastData.hourly.weathercode[index]);
@@ -484,24 +486,26 @@ function WeatherApp() {
               )}
             </div>
           </div>
-          <div className="head-button-container">
-            <button
-              onClick={() => handleUnitChange("celsius", latitude, longitude)}
-              className={`temp-button ${celsiusActive ? "active" : ""}`}
-            >
-              <TbTemperatureCelsius />
-              Celsius
-            </button>
-            <button
-              onClick={() =>
-                handleUnitChange("fahrenheit", latitude, longitude)
-              }
-              className={`temp-button ${fahrenheitActive ? "active" : ""}`}
-            >
-              <TbTemperatureFahrenheit />
-              Fahrenheit
-            </button>
-          </div>
+          {currentWeather && (
+            <div className="head-button-container">
+              <button
+                onClick={() => handleUnitChange("celsius", latitude, longitude)}
+                className={`temp-button ${celsiusActive ? "active" : ""}`}
+              >
+                <TbTemperatureCelsius />
+                Celsius
+              </button>
+              <button
+                onClick={() =>
+                  handleUnitChange("fahrenheit", latitude, longitude)
+                }
+                className={`temp-button ${fahrenheitActive ? "active" : ""}`}
+              >
+                <TbTemperatureFahrenheit />
+                Fahrenheit
+              </button>
+            </div>
+          )}
         </div>
 
         {isLoading ? (
@@ -646,7 +650,6 @@ function WeatherApp() {
                   overflowX: "scroll",
                 }}
               >
-
                 {/* Daily Forecast Cards */}
                 {currentWeather &&
                   Array.from({ length: 8 }, (_, index) => (
@@ -826,10 +829,7 @@ function WeatherApp() {
                   </div>
                   <div className="details-card">
                     <h4 className="details-card-header">Highest Temperature</h4>
-                    <img
-                      src="/icons/thermometer-warmer.svg"
-                      alt="Temp-max"
-                    />
+                    <img src="/icons/thermometer-warmer.svg" alt="Temp-max" />
                     <h2 className="details-card-content">
                       {currentWeather &&
                         currentWeather.foreCastDaily.temperature_2m_max.at(
@@ -840,10 +840,7 @@ function WeatherApp() {
                   </div>
                   <div className="details-card">
                     <h4 className="details-card-header">Lowest Temperature</h4>
-                    <img
-                      src="/icons/thermometer-colder.svg"
-                      alt="Temp-min"
-                    />
+                    <img src="/icons/thermometer-colder.svg" alt="Temp-min" />
                     <h2 className="details-card-content">
                       {currentWeather &&
                         currentWeather.foreCastDaily.temperature_2m_min.at(
