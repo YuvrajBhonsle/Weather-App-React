@@ -243,55 +243,55 @@ function WeatherApp() {
 
     switch (weatherCode) {
       case 0:
-        iconPath = "../public/icons/clear-day.svg";
+        iconPath = "/icons/clear-day.svg";
         description = "Clear sky";
         break;
       case 1:
-        iconPath = "../public/icons/clear-day.svg";
+        iconPath = "/icons/clear-day.svg";
         description = "Mainly Clear";
         break;
       case 2:
-        iconPath = "../public/icons/partly-cloudy-day.svg";
+        iconPath = "/icons/partly-cloudy-day.svg";
         description = "Partly Cloudy";
         break;
       case 3:
-        iconPath = "../public/icons/overcast.svg";
+        iconPath = "/icons/overcast.svg";
         description = "Overcast";
         break;
       case 45:
-        iconPath = "../public/icons/fog.svg";
+        iconPath = "/icons/fog.svg";
         description = "Fog";
         break;
       case 48:
-        iconPath = "../public/icons/partly-cloudy-day-fog.svg";
+        iconPath = "/icons/partly-cloudy-day-fog.svg";
         description = "Depositing Rime Fog";
         break;
       case 51:
-        iconPath = "../public/icons/drizzle.svg";
+        iconPath = "/icons/drizzle.svg";
         description = "Light Drizzle";
         break;
       case 53:
-        iconPath = "../public/icons/drizzle.svg";
+        iconPath = "/icons/drizzle.svg";
         description = "Moderate Drizzle";
         break;
       case 55:
-        iconPath = "../public/icons/drizzle.svg";
+        iconPath = "/icons/drizzle.svg";
         description = "Heavy Drizzle";
         break;
       case 56:
-        iconPath = "../public/icons/drizzle.svg";
+        iconPath = "/icons/drizzle.svg";
         description = "Light Freezing Drizzle";
         break;
       case 57:
-        iconPath = "../public/icons/drizzle.svg";
+        iconPath = "/icons/drizzle.svg";
         description = "Heavy Freezing Drizzle";
         break;
       case 61:
-        iconPath = "../public/icons/rain.svg";
+        iconPath = "/icons/rain.svg";
         description = "Light Rain";
         break;
       case 63:
-        iconPath = "../public/icons/rain.svg";
+        iconPath = "/icons/rain.svg";
         description = "Moderate Rain";
         break;
       case 65:
@@ -299,63 +299,63 @@ function WeatherApp() {
         description = "Heavy Rain";
         break;
       case 66:
-        iconPath = "../public/icons/rain.svg";
+        iconPath = "/icons/rain.svg";
         description = "Light Freezing Rain";
         break;
       case 67:
-        iconPath = "../public/icons/rain.svg";
+        iconPath = "/icons/rain.svg";
         description = "Heavy Freezing Rain";
         break;
       case 71:
-        iconPath = "../public/icons/snow.svg";
+        iconPath = "/icons/snow.svg";
         description = "Light Snow";
         break;
       case 73:
-        iconPath = "../public/icons/snow.svg";
+        iconPath = "/icons/snow.svg";
         description = "Moderate Snow";
         break;
       case 75:
-        iconPath = "../public/icons/snow.svg";
+        iconPath = "/icons/snow.svg";
         description = "Heavy Snow";
         break;
       case 77:
-        iconPath = "../public/icons/sleet.svg";
+        iconPath = "/icons/sleet.svg";
         description = "Snow Grains";
         break;
       case 80:
-        iconPath = "../public/icons/rain.svg";
+        iconPath = "/icons/rain.svg";
         description = "Light Rain Showers";
         break;
       case 81:
-        iconPath = "../public/icons/rain.svg";
+        iconPath = "/icons/rain.svg";
         description = "Moderate Rain Showers";
         break;
       case 82:
-        iconPath = "../public/icons/rain.svg";
+        iconPath = "/icons/rain.svg";
         description = "Heavy Rain Showers";
         break;
       case 85:
-        iconPath = "../public/icons/snow.svg";
+        iconPath = "/icons/snow.svg";
         description = "Light Snow Showers";
         break;
       case 86:
-        iconPath = "../public/icons/snow.svg";
+        iconPath = "/icons/snow.svg";
         description = "Heavy Snow Showers";
         break;
       case 95:
-        iconPath = "../public/icons/thunderstorms-rain.svg";
+        iconPath = "/icons/thunderstorms-rain.svg";
         description = "Thunderstorm";
         break;
       case 96:
-        iconPath = "../public/icons/thunderstorms-snow.svg";
+        iconPath = "/icons/thunderstorms-snow.svg";
         description = "Thunderstorm with Light Hail";
         break;
       case 99:
-        iconPath = "../public/icons/thunderstorms-snow.svg";
+        iconPath = "/icons/thunderstorms-snow.svg";
         description = "Thunderstorm with Heavy Hail";
         break;
       default:
-        iconPath = "../public/icons/not-available.svg";
+        iconPath = "/icons/not-available.svg";
     }
 
     return { iconPath, description };
