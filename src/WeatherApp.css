@@ -613,7 +613,9 @@ img{
   }
   
   .head-search-container .input-container .search-field{
-    justify-content: space-evenly;
+    width: 50%;
+    margin: 1rem auto;
+    justify-content: center;
   }
 
   .head-search-container .input-container{

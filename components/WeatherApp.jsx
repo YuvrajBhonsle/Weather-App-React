@@ -806,7 +806,7 @@ function WeatherApp() {
                 <div className="details-card-container">
                   <div className="details-card">
                     <h4 className="details-card-header">Sunrise</h4>
-                    <img src="../public/icons/sunrise.svg" alt="Sunrise-icon" />
+                    <img src="/icons/sunrise.svg" alt="Sunrise-icon" />
                     <h2 className="details-card-content">
                       {currentWeather &&
                         currentWeather.foreCastDaily.sunrise
@@ -816,7 +816,7 @@ function WeatherApp() {
                   </div>
                   <div className="details-card">
                     <h4 className="details-card-header">Sunset</h4>
-                    <img src="../public/icons/sunset.svg" alt="Sunset-icon" />
+                    <img src="/icons/sunset.svg" alt="Sunset-icon" />
                     <h2 className="details-card-content">
                       {currentWeather &&
                         currentWeather.foreCastDaily.sunset
@@ -827,7 +827,7 @@ function WeatherApp() {
                   <div className="details-card">
                     <h4 className="details-card-header">Highest Temperature</h4>
                     <img
-                      src="../public/icons/thermometer-warmer.svg"
+                      src="/icons/thermometer-warmer.svg"
                       alt="Temp-max"
                     />
                     <h2 className="details-card-content">
@@ -841,7 +841,7 @@ function WeatherApp() {
                   <div className="details-card">
                     <h4 className="details-card-header">Lowest Temperature</h4>
                     <img
-                      src="../public/icons/thermometer-colder.svg"
+                      src="/icons/thermometer-colder.svg"
                       alt="Temp-min"
                     />
                     <h2 className="details-card-content">
@@ -856,7 +856,7 @@ function WeatherApp() {
                     <h4 className="details-card-header">
                       Precipitation Probability
                     </h4>
-                    <img src="../public/icons/raindrop.svg" alt="One-drop" />
+                    <img src="/icons/raindrop.svg" alt="One-drop" />
                     <h2 className="details-card-content">
                       {currentWeather &&
                         currentWeather.foreCastDaily.precipitation_probability_mean.at(
@@ -867,7 +867,7 @@ function WeatherApp() {
                   </div>
                   <div className="details-card">
                     <h4 className="details-card-header">Total Precipitation</h4>
-                    <img src="../public/icons/raindrops.svg" alt="Two-drops" />
+                    <img src="/icons/raindrops.svg" alt="Two-drops" />
                     <h2 className="details-card-content">
                       {currentWeather &&
                         currentWeather.foreCastDaily.precipitation_sum.at(
@@ -878,7 +878,7 @@ function WeatherApp() {
                   </div>
                   <div className="details-card">
                     <h4 className="details-card-header">UV Index</h4>
-                    <img src="../public/icons/uv-index.svg" alt="Sun-icon" />
+                    <img src="/icons/uv-index.svg" alt="Sun-icon" />
                     <h2 className="details-card-content">
                       {currentWeather &&
                         currentWeather.foreCastDaily.uv_index_max.at(
@@ -888,7 +888,7 @@ function WeatherApp() {
                   </div>
                   <div className="details-card">
                     <h4 className="details-card-header">Wind Speed</h4>
-                    <img src="../public/icons/wind.svg" alt="Wind-icon" />
+                    <img src="/icons/wind.svg" alt="Wind-icon" />
                     <h2 className="details-card-content">
                       {currentWeather &&
                         currentWeather.foreCastDaily.windspeed_10m_max.at(
