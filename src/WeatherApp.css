@@ -62,6 +62,8 @@ img{
   /* border: 1px solid black; */
   font-weight: 800;
   border-radius: 5px;
+  border: 2px solid gainsboro;
+  padding: 0.5rem 1rem;
 }
 
 .head-search-container .input-container .search-field input,

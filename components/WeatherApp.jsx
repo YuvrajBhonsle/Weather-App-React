@@ -96,6 +96,7 @@ function WeatherApp() {
       const response = await fetch(FORECAST_URL);
       if (response.ok) {
         const forecastData = await response.json();
+        // console.log(forecastData)
 
         // To get temp of the current hour
         const currentDate = dayjs();
@@ -116,22 +117,32 @@ function WeatherApp() {
         forecastData.hourly.time.forEach((dateTime, index) => {
           const date = dateTime.split("T")[0];
           const time = dateTime.split("T")[1].slice(0, 5);
+          // console.log("Time", time)
 
           if (date === currentDateString) {
             const [hours, minutes] = time.split(":");
             const [currentHours, currentMinutes] = currentTimeString.split(":");
 
+            // if (
+            //   (hours > currentHours && hours <= 23) ||
+            //   (hours === currentHours && minutes >= currentMinutes)
+            // ) {
+            //   desiredIndices.push(index);
+            // }
+
             if (
-              (hours > currentHours && hours <= 23) ||
-              (hours === currentHours && minutes >= currentMinutes)
+              date > currentDateString ||
+              (date === currentDateString &&
+                ((hours > currentHours && hours <= 23) ||
+                  (hours === currentHours && minutes >= currentMinutes)))
             ) {
               desiredIndices.push(index);
-            } else if (hours > 23) {
             }
           }
         });
-
+        // console.log(desiredIndices)
         setHourlyIndex(desiredIndices);
+        // console.log(hourlyIndex);
 
         const time = [],
           weatherCode = [],
@@ -406,16 +417,16 @@ function WeatherApp() {
     setIsInputActive(false);
   };
 
-  const scrollToCard = (index) => {
-    const container = containerRef.current;
-    const cardWidth = container.offsetWidth;
-    const newPosition = index * cardWidth;
-    container.scrollTo({
-      left: newPosition,
-      behavior: "smooth",
-    });
-    setScrollPosition(newPosition);
-  };
+  // const scrollToCard = (index) => {
+  //   const container = containerRef.current;
+  //   const cardWidth = container.offsetWidth;
+  //   const newPosition = index * cardWidth;
+  //   container.scrollTo({
+  //     left: newPosition,
+  //     behavior: "smooth",
+  //   });
+  //   setScrollPosition(newPosition);
+  // };
 
   const scrollToLeft = () => {
     const container = containerRef.current;
@@ -509,8 +520,8 @@ function WeatherApp() {
         </div>
 
         {isLoading ? (
-          <div class="loader-container">
-            <div class="nature-10"></div>
+          <div className="loader-container">
+            <div className="nature-10"></div>
           </div>
         ) : (
           currentWeather && (
@@ -609,8 +620,8 @@ function WeatherApp() {
       </div>
 
       {isLoading ? (
-        <div class="loader-container">
-          <div class="nature-10"></div>
+        <div className="loader-container">
+          <div className="nature-10"></div>
         </div>
       ) : (
         <section className="forecast-container">
