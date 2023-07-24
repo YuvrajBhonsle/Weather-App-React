@@ -308,7 +308,7 @@ function WeatherApp() {
         description = "Moderate Rain";
         break;
       case 65:
-        iconPath = "/public/icons/rain.svg";
+        iconPath = "/icons/rain.svg";
         description = "Heavy Rain";
         break;
       case 66:
