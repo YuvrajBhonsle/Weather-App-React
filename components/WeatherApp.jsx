@@ -92,7 +92,7 @@ function WeatherApp() {
       const current = new Date();
       current.setDate(current.getDate() + 7);
       const currentContentBeforeT = current.toISOString().split("T")[0];
-      const FORECAST_URL = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&timezone=auto&temperature_unit=${tempUnit}&current_weather=true&daily=temperature_2m_max,temperature_2m_min,uv_index_max,precipitation_probability_mean,sunrise,sunset,weathercode,precipitation_sum,apparent_temperature_max,apparent_temperature_max,windspeed_10m_max&hourly=apparent_temperature,weathercode&start_date=${todayContentBeforeT}&end_date=${currentContentBeforeT}&forecast_days=7`;
+      const FORECAST_URL = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&timezone=auto&temperature_unit=${tempUnit}&current_weather=true&daily=temperature_2m_max,temperature_2m_min,uv_index_max,precipitation_probability_mean,sunrise,sunset,weathercode,precipitation_sum,apparent_temperature_max,apparent_temperature_max,windspeed_10m_max&hourly=apparent_temperature,weathercode&forecast_days=8`;
       const response = await fetch(FORECAST_URL);
       if (response.ok) {
         const forecastData = await response.json();
